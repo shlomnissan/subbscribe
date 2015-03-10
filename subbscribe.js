@@ -33,6 +33,7 @@
         if(getCookie('subbscribe-hidden') != 1) {
 
             this.append(html);
+            $('#subbscribe').addClass('animated slideInRight');
 
         }
 
@@ -49,9 +50,16 @@
 
         $('#subbscribe .close-x').click(function(){
 
-            $('#subbscribe').hide();
-            setCookie('subbscribe-hidden', 1, 1); // Hide for a day
 
+            $('#subbscribe').addClass('animated fadeOut');
+            $('#subbscribe').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+
+                $('#subbscribe').remove();
+                setCookie('subbscribe-hidden', 1, 1); // Hide for a day
+
+            });
+
+            
         });
 
         $('#subbscribe .show-form').click(function(){
@@ -90,8 +98,14 @@
                             //SUCCESS
                             resetFormFields()
                             $('.subbscribe-success').slideDown();
-                            setCookie('subbscribe-hidden', 1, 365); // Hide for a year
-                            setTimeout(function(){ $('#subbscribe').hide(); }, 2000);
+                            
+                            setTimeout(function(){ $('#subbscribe').addClass('animated fadeOut'); }, 2000);
+                            $('#subbscribe').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+                
+                                $('#subbscribe').remove();
+                                setCookie('subbscribe-hidden', 1, 365); // Hide for a year
+
+                            });
 
                        }
                     }
@@ -160,12 +174,12 @@
         }
 
         function setCookie(cname, cvalue, exdays) {
-
+            /*
             var d = new Date();
             d.setTime(d.getTime() + (exdays*24*60*60*1000));
             var expires = "expires="+d.toUTCString();
             document.cookie = cname + "=" + cvalue + "; " + expires + "; path=/";
-
+            */
         }
 
         function getCookie(cname) {
