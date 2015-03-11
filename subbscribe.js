@@ -50,7 +50,6 @@
 
         $('#subbscribe .close-x').click(function(){
 
-
             $('#subbscribe').addClass('animated fadeOut');
             $('#subbscribe').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
 
@@ -59,6 +58,7 @@
 
             });
 
+            settings.onClose.call();
             
         });
 
@@ -104,6 +104,7 @@
                 
                                 $('#subbscribe').remove();
                                 setCookie('subbscribe-hidden', 1, 365); // Hide for a year
+                                settings.onSubbscribe.call();
 
                             });
 
