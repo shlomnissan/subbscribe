@@ -68,6 +68,7 @@
 }
 #subbscribe .subb-body {
   padding: 15px;
+  position: relative;
 }
 #subbscribe .subb-body .subb-thumbnail {
   width: 40px;
@@ -119,15 +120,18 @@
   margin-top: 12px;
   margin-left: 10px;
 }
+#subbscribe .subb-body .subb-form {
+  padding-left: 5px;
+}
 #subbscribe .subb-body .subb-form p {
   margin-top: 5px;
   margin-bottom: 15px;
   font-size: 13px;
   font-weight: 500 !important;
-  width: 93%;
+  width: 100%;
 }
 #subbscribe .subb-body .subb-form input {
-  width: 93%;
+  text-indent: 8px;
   font-weight: 500;
   margin-bottom: 5px;
   -webkit-border-radius: 5px;
@@ -139,6 +143,9 @@
   border: 1px solid #dcdcdc;
   padding: 7px;
   font-size: 12px;
+  display: block;
+  width: 100%;
+  padding: 5px 0;
 }
 #subbscribe .subb-body .subb-form input.error {
   border-color: #fd392b;
