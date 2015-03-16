@@ -4,11 +4,17 @@
 ===============================================================================
 */
 #subbscribe {
+  padding: 0;
+  margin: 0;
+  color: #7b8993;
   position: fixed;
   right: 15px;
   bottom: 15px;
   border: 1px solid #e9e9e9;
-  font-family: 'Helvetica-Neue', Helvetica, Sans-serif;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 300;
+  font-size: 17px;
   width: 300px;
   font-size: 15px;
   box-shadow: 0 1px 2px #e9e9e9;
@@ -20,6 +26,16 @@
   background-clip: padding-box;
   background-color: #fff;
   z-index: 100001;
+}
+#subbscribe a {
+  color: #7b8993;
+  text-decoration: underline;
+}
+#subbscribe a:hover,
+#subbscribe a:focus,
+#subbscribe a:visited,
+#subbscribe a:active {
+  color: #7b8993;
 }
 #subbscribe .subbscribe-alert {
   font-size: 12px;
@@ -74,8 +90,9 @@
   color: #fff;
   border: none;
   font-weight: bold;
-  padding: 9px 8px 8px 8px;
-  font-size: 13px;
+  padding: 9px 10px 9px 10px;
+  font-size: 12px;
+  cursor: pointer;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
@@ -103,12 +120,14 @@
   margin-left: 10px;
 }
 #subbscribe .subb-body .subb-form p {
-  margin-bottom: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 500 !important;
+  width: 93%;
 }
 #subbscribe .subb-body .subb-form input {
-  width: 100%;
+  width: 93%;
   font-weight: 500;
   margin-bottom: 5px;
   -webkit-border-radius: 5px;
@@ -118,8 +137,8 @@
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
   border: 1px solid #dcdcdc;
-  padding: 5px;
-  font-size: 13px;
+  padding: 7px;
+  font-size: 12px;
 }
 #subbscribe .subb-body .subb-form input.error {
   border-color: #fd392b;

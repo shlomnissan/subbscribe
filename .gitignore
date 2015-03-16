@@ -1,6 +1,8 @@
 .DS_Store
 .AppleDouble
 .LSOverride
+*.swp
+!spec/*.swp
 
 # Icon must end with two \r
 Icon
