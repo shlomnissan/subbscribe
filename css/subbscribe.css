@@ -159,6 +159,10 @@
   -o-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
 }
+#subbscribe .subb-body .footer {
+  font-size: 10px;
+  text-align: right;
+}
 /*
 ===============================================================================
   Animations
