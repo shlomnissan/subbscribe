@@ -1,31 +1,31 @@
 #Subbscribe
-## Tumblr style opt-in popup form
+Tumblr style opt-in popup form
 
 Visit www.subbscribe.com for a demo or subscribe to www.1bytebeta.com for updates and announcements.
 
 - - -
 
-You know that nice little pop-up window titled ‘Never miss a post’ that shows up when you scroll through Tumblr sites encouraging you to follow the account?
+You know that nice little pop-up window that shows up when you scroll through Tumblr sites encouraging you to follow the account?
 
 - - -
 
-I was using MailChimp’s pop-up overlay for a while but I find it too obtrusive. It’s covering the screen and it shows as soon as someone landed on my blog, at a point I wouldn’t expect them to subscribe anyway as they didn’t get a chance to read any of my posts.
+I was using MailChimp’s pop-up overlay for a while but I find it too obtrusive. It’s covering the screen and it showed as soon as someone landed on my blog, at a point which I wouldn’t expect them to subscribe anyway as they didn’t get a chance to read any of my posts.
 
 I wanted an unobtrusive pop-up form that will invite people to subscribe to my mailing list without interfering with the overall experience or being too obscure for people to realise it’s there.
 
-I always thought Tumblr’s ‘follow’ popup was really slick so I decided to turn it into a pop-up opt-in form. It was initially hard-coded on my blog but the feedback was really positive so I converted it to a jQuery plugin.
+I always thought Tumblr’s ‘follow’ popup was really slick so I decided to turn it into a pop-up opt-in form. It was initially hard-coded on 1Byte Beta but the feedback was really positive so I converted it to a jQuery plugin.
 
 - - -
 
 It’s still early days for this project but I created a nice little landing page for it: www.subbscribe.com. 
 
-At the moment it only supports MailChimp but I will try to integrate CampaignMonitor before the end of the month.
+At the moment, it supports MailChimp and CampaignMonitor.
 
-If you’re using it, star the repo to show appreciation!
+To get updates and announcements about this project, [subbscribe to 1Byte Beta’s mailing-list](http://www.1bytebeta.com).
 
 ### Requirements
 
-I tried to keep it as light as possible. The only thing you need to is `jQuery` and a MailChimp form with name and email fields.
+I tried to keep it as light as possible. The only thing you need to is `jQuery` and a MailChimp or CampaignMonitor form with  the default name and email fields.
 
 ### How to use
 
@@ -36,21 +36,30 @@ It's really easy to get started. First you need to include the required librarie
 <script src="subbscribe.min.js"></script>
 ```
 
-Then, you can initialise the plugin using the document’s body as the container and passing your MailChimp form url as the parameter.
+And the CSS file at the head:
 
 ```
-$('body').subbscribe({    
+<link rel="stylesheet" href="subbscribe.css" />
+```
+
+Then, you can initialise the plugin using the document’s body as the container, passing your list and form url parameters.
+
+```
+$('body').subbscribe({
+    list: "MailChimp",
     url : "//1bytebeta.us9.list-manage.com/subscribe/post?u=1c261e60d8259c0c636801494&amp;id=7fa99bf359"
 });
 ```
 
-The form’s URL is **required**. The plugin will log an error if it’s not provided.
+The list and form’s URL are **required**. The plugin will log an error if they are not provided.
 
 ### Options
 
-`url` - Your MailChimp form URL. You can get it from the form’s embed script.
+`list` - 'MailChimp' or 'CampaignMonitor'
 
-`title` - The window’s title.
+`url` - Your MailChimp/CampaignMonitor form URL. You can get it from the form embed script under the action attribute.
+
+`title` - The window title.
 
 `text ` - The text that will show up above the form when a user click to subscribe.
 
