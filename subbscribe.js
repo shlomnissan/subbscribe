@@ -1,5 +1,5 @@
 /**
- * Subbscibe.js (http://www.subbscribe.com)
+ * Subbscribe.js (http://www.subbscribe.com)
  * Copyright (c) 2014 (v2.0) Shlomi Nissan, 1ByteBeta (http://www.1bytebeta.com)
  * Licensed under the MIT (http://www.opensource.org/licenses/mit-license.php)
  */
