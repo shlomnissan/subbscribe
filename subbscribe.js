@@ -18,8 +18,9 @@
             text         : 'Get our latest posts and announcements in your inbox. You won\'t regret it!',
             name         : 'Subbscribe',
             color        : '#ee6262',
-            thumbnail    : 'https://s3-ap-southeast-2.amazonaws.com/subbscribe/img/avatar.png'
-        }, options);
+            thumbnail    : 'https://s3-ap-southeast-2.amazonaws.com/subbscribe/img/avatar.png',
+            emailonly	 : false
+	}, options);
 
         // Make sure a URL has been passed through
         if ( settings.url == '' ) {
@@ -55,11 +56,24 @@
 		console.log('Subbscribe Error: list value must be set to MailChimp or CampaignMonitor');
 		return;
 
-	}	
+	}
+	
+	// Separate the input fields from the HTML
+	// if emailonly is set, nameInput should be blank
+
+	var nameInput 	= '';
+	var emailInput 	= '<input type="email" name="' + _email + '" id="subb-EMAIL" placeholder="Email Address" />';
+	
+	if( !settings.emailonly ) {
+
+		nameInput = ' <input type="text" name="' + _name + '" id="subb-NAME" placeholder="Name" />';
+
+	}
+
 
 	// HTML
-        var html = '<div id="subbscribe"> <div class="subb-title">' + settings.title + ' <img class="close-x" src="https://s3-ap-southeast-2.amazonaws.com/subbscribe/img/close.svg" />  </div> <div class="subb-body"> <div class="subb-hidden"> <div class="subb-thumbnail"> <img style="width: 40px; height: 40px;" src="' + settings.thumbnail + '" /> </div> <div class="subb-hidden"> <div class="subb-site"> &nbsp;' + settings.name + ' </div> <button class="subb-button show-form">Subscribe</button> </div> </div> <div class="subb-form" style="display: none"> <p>' + settings.text + '</p> <form id="mc-embedded-subbscribe-form" method="post" action="' + settings.url + '"> <div class="subbscribe-alert subbscribe-error" style="display: none">Oops! Check your details and try again.</div> <div class="subbscribe-alert subbscribe-success" style="display: none">Thanks! Check your email for confirmation.</div> <div class="text-input"> <input type="text" name="' + _name + '" id="subb-NAME" placeholder="Name" /> </div> <div class="text-input"> <input type="email" name="' + _email + '" id="subb-EMAIL" placeholder="Email Address" /> </div> <button class="subb-button submit-form" type="submit" style="width: 100%; margin-bottom: 10px;">Subscribe</button></form> <div class="footer">Powered by <a href="http://www.subbscribe.com" target="_blank">Subbscribe.com</a></div> </div> </div> </div>';
-        
+        var html = '<div id="subbscribe"> <div class="subb-title">' + settings.title + ' <img class="close-x" src="https://s3-ap-southeast-2.amazonaws.com/subbscribe/img/close.svg" />  </div> <div class="subb-body"> <div class="subb-hidden"> <div class="subb-thumbnail"> <img style="width: 40px; height: 40px;" src="' + settings.thumbnail + '" /> </div> <div class="subb-hidden"> <div class="subb-site"> &nbsp;' + settings.name + ' </div> <button class="subb-button show-form">Subscribe</button> </div> </div> <div class="subb-form" style="display: none"> <p>' + settings.text + '</p> <form id="mc-embedded-subbscribe-form" method="post" action="' + settings.url + '"> <div class="subbscribe-alert subbscribe-error" style="display: none">Oops! Check your details and try again.</div> <div class="subbscribe-alert subbscribe-success" style="display: none">Thanks! Check your email for confirmation.</div> <div class="text-input"> ' + nameInput + ' </div> <div class="text-input"> ' + emailInput + ' </div> <button class="subb-button submit-form" type="submit" style="width: 100%; margin-bottom: 10px;">Subscribe</button></form> <div class="footer">Powered by <a href="http://www.subbscribe.com" target="_blank">Subbscribe.com</a></div> </div> </div> </div>';
+
         if(getCookie('subbscribe-hidden') != 1) {
 
             this.append(html);
@@ -208,17 +222,21 @@
             var name    = $('#subb-NAME');
             var email   = $('#subb-EMAIL');
 
-            if( name.val().length < 2 ) {
+	    if( !settings.emailonly ) {
+		
+		if( name.val().length < 2 ) {
 
-                valid = false;
-                name.addClass('error');
+                    valid = false;
+    	            name.addClass('error');
 
-            } else {
+                } else {
 
-                name.removeClass('error');
+                    name.removeClass('error');
 
-            }
+                }
 
+	    }
+            
             if ( !validateEmail( email.val() ) ) {
 
                 valid = false;
