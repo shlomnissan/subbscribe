@@ -93,7 +93,7 @@
 
         $('#subbscribe .close-x').click(function(){
 
-            $('#subbscribe').addClass('animated fadeOut');
+            $('#subbscribe').toggleClass('slideInRight fadeOut');
             $('#subbscribe').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
 
                 $('#subbscribe').remove();
