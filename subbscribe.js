@@ -31,7 +31,7 @@
 
         };
         
-        //make sure the cm_mail_field is set when using Campain Monitor
+        //make sure the cm_mail_field is set when using Campaign Monitor
         if( settings.list === 'CampaignMonitor' && !settings.cm_mail_field.length ){
 
             console.log('You must provide the mail input name. Found in the form code from CampainMonitor');
