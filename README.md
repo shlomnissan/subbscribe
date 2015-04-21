@@ -71,6 +71,8 @@ The list and form’s URL are **required**. The plugin will log an error if they
 
 `emailonly` - If set to true, the name field will not be included in the opt-in form.
 
+`cm_mail_field` - If CampaignMonitor is used as client, a CM mail field should be provided.
+
 ### Callbacks
 
 `onClose` - Called when someone close the pop-up without subscribing.
