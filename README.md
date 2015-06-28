@@ -57,6 +57,8 @@ The list and form’s URL are **required**. The plugin will log an error if they
 
 `list` - 'MailChimp' or 'CampaignMonitor'
 
+`delay` - Dispatch the slide in after X number of seconds
+
 `url` - Your MailChimp/CampaignMonitor form URL. You can get it from the form embed script under the action attribute.
 
 `title` - The window title.
