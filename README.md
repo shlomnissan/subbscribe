@@ -1,5 +1,4 @@
 #Subbscribe
-Marketing slider form for MailChimp and Campaign Monitor
 
 ### Requirements
 
