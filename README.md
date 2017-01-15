@@ -1,27 +1,5 @@
 #Subbscribe
-Tumblr style opt-in popup form
-
-Visit www.subbscribe.com for a demo or subscribe to www.1bytebeta.com for updates and announcements.
-
-- - -
-
-You know that nice little pop-up window that shows up when you scroll through Tumblr sites encouraging you to follow the account?
-
-- - -
-
-I was using MailChimp’s pop-up overlay for a while but I find it too obtrusive. It’s covering the screen and it showed as soon as someone landed on my blog, at a point which I wouldn’t expect them to subscribe anyway as they didn’t get a chance to read any of my posts.
-
-I wanted an unobtrusive pop-up form that will invite people to subscribe to my mailing list without interfering with the overall experience or being too obscure for people to realise it’s there.
-
-I always thought Tumblr’s ‘follow’ popup was really slick so I decided to turn it into a pop-up opt-in form. It was initially hard-coded on 1Byte Beta but the feedback was really positive so I converted it to a jQuery plugin.
-
-- - -
-
-It’s still early days for this project but I created a nice little landing page for it: www.subbscribe.com. 
-
-At the moment, it supports MailChimp and CampaignMonitor.
-
-To get updates and announcements about this project, [subbscribe to 1Byte Beta’s mailing-list](http://www.1bytebeta.com).
+Marketing slider form for MailChimp and Campaign Monitor
 
 ### Requirements
 
